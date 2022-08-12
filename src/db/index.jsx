@@ -6,10 +6,10 @@ export const ExampleUser = {
 };
 
 export const ExampleCar = {
-  img: "https://github.com/KA-08-Motors-Shop/app-site-leil-o-de-carros/blob/main/src/db/imgs/kombi.png",
-  shortDescription: "carro macqueen",
-  name: "Marquinho semi-novo 2014",
-  itemDescription: "Marquinho feito em 2014 em bom estado unico dono",
+  img: "https://raw.githubusercontent.com/KA-08-Motors-Shop/app-site-leil-o-de-carros/main/src/db/imgs/kombi.png?token=GHSAT0AAAAAABV56TFUDE4KWJQYIZJHHCBCYXVTYSA",
+  shortDescription: "kombi",
+  name: "Kombi semi-nova 2014",
+  itemDescription: "Kombi semi-nova feita em 2014 em bom estado unico dono",
   tags: ["0 KM", "2014"],
   user: ExampleUser,
   price: "113.000",

@@ -13,7 +13,7 @@ export const UserProvider = ({ children }) => {
 
   const handleLogin = (email, password) => {
     app
-      .post("users/login", {
+      .post("users/login/", {
         email,
         password,
       })

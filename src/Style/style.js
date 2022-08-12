@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     outline: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 :root {
@@ -55,4 +56,8 @@ h1, h2, h3, h4, p, span {
 button {
     cursor: pointer;
 }
-`
+
+body{
+    background: linear-gradient(to bottom, var(--brand1) 50%, var(--grey8) 50%);
+}
+`;
