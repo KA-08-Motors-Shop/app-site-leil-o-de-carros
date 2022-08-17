@@ -77,7 +77,7 @@ const Header = () => {
             </div>
 
             <div className={userModal ? "user-menu-open" : "user-menu-closed"}>
-              <Link to="/perfil">Perfil</Link>
+              <Link to="/profile">Perfil</Link>
               <div onClick={handleLogOut}>
                 <h4>Deslogar</h4>
               </div>
