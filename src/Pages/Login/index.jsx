@@ -1,22 +1,15 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../../Providers/user";
+import LoginForm from "../../Components/login-form";
+import Footer from "../../Components/footer";
+import Header from "../../Components/header";
+import { LoginPage } from "./style";
 
 const Login = () => {
-  const { handleLogin } = useContext(UserContext);
-  const [data] = useState({
-    email: "ricardo@ricardo.com",
-    password: "Juan12345678",
-  });
-
-  const submitLogin = () => {
-    handleLogin(data.email, data.password);
-  };
-
   return (
-    <div>
-      
-      <button onClick={submitLogin}>Login</button>
-    </div>
+    <LoginPage>
+      <Header />
+      <LoginForm />
+      <Footer />
+    </LoginPage>
   );
 };
 
