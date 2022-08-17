@@ -2,6 +2,8 @@ import Header from "../../Components/header";
 import Karousel from "../../Components/karousel";
 import { HomePageStyle } from "./style";
 
+
+
 import Button from "../../Components/button";
 
 import { KarouselExample } from "../../db";

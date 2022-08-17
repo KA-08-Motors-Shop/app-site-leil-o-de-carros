@@ -8,8 +8,18 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("@leilao user")) || false
   );
+  const [userAnnouncements, setUserAnnouncements] = useState([]);
 
   const history = useHistory();
+
+  const handleListOneUser = (id) => {
+    app
+      .get(`/user/${id}`)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => console.log(err));
+  };
 
   const handleLogin = (email, password) => {
     app
@@ -20,16 +30,16 @@ export const UserProvider = ({ children }) => {
       .then((response) => {
         localStorage.setItem(
           "@leilao Token",
-          JSON.stringify(response.data.accessToken)
+          JSON.stringify(response.data.AccessToken)
         );
-
         localStorage.setItem(
           "@leilao user",
           JSON.stringify(response.data.user)
         );
         setUser(response.data.user);
         history.push("/");
-      });
+      })
+      .catch((error) => console.log({ ...error }));
   };
 
   const handleLogOut = () => {
@@ -39,12 +49,67 @@ export const UserProvider = ({ children }) => {
     history.push("/");
   };
 
+  const handleRegister = ({
+    name,
+    email,
+    cpf,
+    cellphone,
+    birthDate,
+    description,
+    cep,
+    state,
+    city,
+    street,
+    number,
+    complement,
+    isAdvertiser,
+    isBuyer,
+    password,
+  }) => {
+    app
+      .post(
+        "users/register",
+        {
+          name,
+          email,
+          cpf,
+          cellphone,
+          birthDate,
+          description,
+          cep,
+          state,
+          city,
+          street,
+          number,
+          complement,
+          isAdvertiser,
+          isBuyer,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        history.push("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <UserContext.Provider
       value={{
         user,
+        userAnnouncements,
         handleLogin,
         handleLogOut,
+        handleListOneUser,
+        handleRegister,
+        setUserAnnouncements,
       }}
     >
       {children}

@@ -40,7 +40,21 @@ export const Desktop = styled.header`
     align-items: center;
   }
 
+  .inicials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    height: 104px;
+    width: 104px;
+    color: var(--whiteFixed);
+    background-color: var(--brand1);
+    border-radius: 50px;
+  }
+
   .user-sub-menu {
+    display: flex;
+    flex-direction: column;
   }
 
   .user-modal-closed {
@@ -73,6 +87,20 @@ export const Desktop = styled.header`
   }
 
   .logged-sub-menu {
+  }
+
+  .user-menu-closed {
     display: none;
+  }
+
+  .user-menu-open {
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    position: absolute;
+    zindex: 100000;
+    margin-top: 80px;
+    width: 200px;
   }
 `;

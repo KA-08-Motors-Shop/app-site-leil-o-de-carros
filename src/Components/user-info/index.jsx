@@ -1,14 +1,38 @@
 import { UserInfoStyled } from "./style";
+import { UserContext } from "../../Providers/user";
+import { useContext } from "react";
+import { useHistory } from "react-router-dom";
 
-const UserInfo = ({user}) => {
+const UserInfo = ({ id }) => {
+  const { user } = useContext(UserContext);
+  const history = useHistory();
+
+  if (!user) {
+    history.push("/login");
+  }
+
+  const getFirstLetters = (str) => {
+    const firstLetters = str
+      .split(" ")
+      .map((word) => word[0])
+      .join("")
+      .toUpperCase();
+
+    return firstLetters;
+  };
+
   return (
     <UserInfoStyled>
-      <img src={user.img} alt="user profile" />
-      <div>
-        <h3>{user.name}</h3>
-        <h2>{user.type}</h2>
+      <div className="inicials" alt="user perfil">
+        <p>{getFirstLetters(user.name)}</p>
       </div>
-      <h2>{user.bio}</h2>
+      <div className="user-name">
+        <h3>{user.name}</h3>
+        <div className="tag-user-type">
+          <p>{user.isAdvertiser ? "Anunciante" : "Comprador"}</p>
+        </div>
+      </div>
+      <p className="user-bio">{user.description}</p>
     </UserInfoStyled>
   );
 };

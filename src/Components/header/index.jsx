@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-//import { UserContext } from "../../Providers/user";
+import { UserContext } from "../../Providers/user";
 import { FaBars } from "react-icons/fa";
-
-import { ExampleUser } from "../../db/";
 
 import { Desktop, Mobile } from "./style";
 
@@ -11,17 +9,17 @@ import LogoSVG from "../../Utils/LogoSVG";
 
 const Header = () => {
   const [width, setWidth] = useState("");
-  const { user, handleLogOut } = useState("");
-  //const [imgSrc, setImgSrc] = useState("");
-  //const [userName, setUserName] = useState("");
+  const { user, handleLogOut } = useContext(UserContext);
 
-  // useEffect(() => {
-  //  setUserName(user.name);
-  //}, [user]);
+  const getFirstLetters = (str) => {
+    const firstLetters = str
+      .split(" ")
+      .map((word) => word[0])
+      .join("")
+      .toUpperCase();
 
-  //useEffect(() => {
-  //   setImgSrc(user.img);
-  //}, [user]);
+    return firstLetters;
+  };
 
   const [userModal, setUserModal] = useState(false);
 
@@ -73,14 +71,12 @@ const Header = () => {
               className={userModal ? "user-modal-open" : "user-modal-closed"}
               onClick={handleModal}
             >
-              <figure className="perfil-img">
-                <img src={ExampleUser.img} alt="Perfil" />
-                <figcaption>Perfil Image</figcaption>
-              </figure>
+              <div alt="user perfil">{getFirstLetters(user.name)}</div>
 
-              <div className="user-name">{ExampleUser.name}</div>
+              <div className="user-name">{user.name}</div>
             </div>
-            <div className="logged-sub-menu">
+
+            <div className={userModal ? "user-menu-open" : "user-menu-closed"}>
               <Link to="/perfil">Perfil</Link>
               <div onClick={handleLogOut}>
                 <h4>Deslogar</h4>
@@ -117,8 +113,8 @@ const Header = () => {
         <div className="user-sub-menu" onClick={handleModal}>
           <div>
             <div>
-              <img src={ExampleUser.img} alt="Perfil"></img>
-              <div>{ExampleUser.name}</div>
+              <div alt="user perfil">{getFirstLetters(user.name)}</div>
+              <div>{user.name}</div>
             </div>
             {mobileModal && (
               <div className="mobile-modal">

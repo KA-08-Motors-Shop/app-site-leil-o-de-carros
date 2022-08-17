@@ -1,9 +1,12 @@
 import { Switch, Route, useLocation } from "react-router-dom";
 
-import  HomePage  from "../Pages/Home";
+import HomePage from "../Pages/Home";
+import Profile from "../Pages/Profile";
+import Register from "../Pages/Register";
+import Login from "../Pages/Login";
 
 const Routes = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <Switch location={location} key={location.pathname}>
@@ -11,7 +14,14 @@ const Routes = () => {
         <HomePage />
       </Route>
       <Route path="/login">
-        </Route>
+        <Login />
+      </Route>
+      <Route path="/register">
+        <Register />
+      </Route>
+      <Route path="/profile">
+        <Profile />
+      </Route>
     </Switch>
   );
 };
