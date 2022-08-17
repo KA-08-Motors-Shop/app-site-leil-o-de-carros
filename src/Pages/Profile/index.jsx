@@ -25,7 +25,7 @@ const Profile = () => {
     <Profiles>
       <Header />
       <UserInfo user={user.id}></UserInfo>
-      <Karousel title={"Carros"} itens={userAnnouncements}></Karousel>
+      <Karousel title={"Anuncios"} itens={userAnnouncements}></Karousel>
       <Footer />
     </Profiles>
   );

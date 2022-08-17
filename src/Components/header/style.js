@@ -44,12 +44,13 @@ export const Desktop = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
-    height: 104px;
-    width: 104px;
+    font-size: 14px;
+    height: 32px;
+    width: 32px;
     color: var(--whiteFixed);
     background-color: var(--brand1);
     border-radius: 50px;
+    margin-right: 8px;
   }
 
   .user-sub-menu {
@@ -57,9 +58,9 @@ export const Desktop = styled.header`
     flex-direction: column;
   }
 
-  .user-modal-closed {
+  .user-modal {
     display: flex;
-    width: 200px;
+    width: 243px;
     height: 80px;
     justify-content: center;
     align-items: center;
@@ -99,8 +100,20 @@ export const Desktop = styled.header`
     right: 0;
     top: 0;
     position: absolute;
-    zindex: 100000;
     margin-top: 80px;
     width: 200px;
+    background-color: var(--grey10);
+    margin-right: 12px;
+    box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    padding-top: 22px;
+    padding-left: 22px;
+  }
+
+  .user-menu-open * {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--grey2);
+    margin-bottom: 16px;
   }
 `;

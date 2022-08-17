@@ -5,6 +5,7 @@ export const Karousels = styled.div`
   flex-direction: column;
   min-heigth: 420px;
   overflow: hidden;
+  margin-bottom: 40px;
 
   .karousel-title {
     font-size: 24px;
@@ -38,5 +39,15 @@ export const Karousels = styled.div`
 
   .image-item > img {
     height: 152px;
+  }
+
+  .no-itens {
+    height: 300px;
+    width: 80vw;
+    border: 1px solid var(--grey6);
+    border-radius: 4px;
+    box-shadow: 10px 4px 40px -10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding-top: 140px;
   }
 `;
