@@ -10,6 +10,7 @@ export const UserInfoStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-bottom: 90px;
 
   .inicials {
     display: flex;

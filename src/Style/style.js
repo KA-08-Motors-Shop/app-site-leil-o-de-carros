@@ -57,7 +57,13 @@ button {
     cursor: pointer;
 }
 
-body{
-    background: linear-gradient(to bottom, var(--brand1) 50%, var(--grey8) 50%);
+.body-background{
+    position: absolute;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 360px;
+    background-color: var(--brand1);
 }
 `;

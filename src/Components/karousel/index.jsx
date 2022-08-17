@@ -13,7 +13,7 @@ const Karousel = ({ itens, title }) => {
             ))}
           </div>
         ) : (
-          <div>Não a itens a serem mostrados!</div>
+          <div className="no-itens">Não a itens a serem mostrados!</div>
         )}
       </div>
     </Karousels>

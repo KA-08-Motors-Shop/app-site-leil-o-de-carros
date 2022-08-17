@@ -67,11 +67,10 @@ const Header = () => {
           </div>
         ) : (
           <div className="user-sub-menu">
-            <div
-              className={userModal ? "user-modal-open" : "user-modal-closed"}
-              onClick={handleModal}
-            >
-              <div alt="user perfil">{getFirstLetters(user.name)}</div>
+            <div className="user-modal" onClick={handleModal}>
+              <div className="inicials" alt="user perfil">
+                {getFirstLetters(user.name)}
+              </div>
 
               <div className="user-name">{user.name}</div>
             </div>
@@ -79,7 +78,7 @@ const Header = () => {
             <div className={userModal ? "user-menu-open" : "user-menu-closed"}>
               <Link to="/profile">Perfil</Link>
               <div onClick={handleLogOut}>
-                <h4>Deslogar</h4>
+                <h4>Sair</h4>
               </div>
             </div>
           </div>
@@ -118,7 +117,7 @@ const Header = () => {
             </div>
             {mobileModal && (
               <div className="mobile-modal">
-                <Link to="/perfil">Perfil</Link>
+                <Link to="/profile">Perfil</Link>
                 <Link to="/">Carros</Link>
                 <Link to="/">Motos</Link>
                 <Link to="/">Leilão</Link>
