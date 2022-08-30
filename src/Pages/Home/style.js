@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const HomePageStyle = styled.div`
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, var(--brand1) 45%, white 0%);
+  background: linear-gradient(to bottom, var(--brand1) 500px, white 0%);
+  display: flex;
+  flex-direction: column;
 
   .entry-text {
     height: 263px;

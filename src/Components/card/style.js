@@ -5,7 +5,6 @@ export const Cards = styled.div`
   min-width: 312px;
   margin-right: 48px;
   margin-left: 48px;
-  margin-bottom: 200px;
 
   .image-item {
     margin-bottom: 16px;
@@ -44,8 +43,6 @@ export const Cards = styled.div`
   .perfil-img {
     margin-right: 8px;
   }
-
-  
 
   .bottom-card {
     display: flex;

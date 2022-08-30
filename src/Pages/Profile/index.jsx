@@ -11,15 +11,25 @@ const Profile = () => {
   const { user, userAnnouncements, setUserAnnouncements } =
     useContext(UserContext);
 
+  const announcementsProcessor = (users) => {
+    var list = [];
+    users.announcements.forEach((announcement) => {
+      announcement.userId = users.id;
+      announcement.userName = users.name;
+      list.push(announcement);
+    });
+    setUserAnnouncements(list);
+  };
+
   useEffect(() => {
     app
       .get(`/user/${user.id}`)
       .then((response) => {
-        setUserAnnouncements(response.data.announcements);
+        announcementsProcessor(response.data);
         console.log(response);
       })
       .catch((err) => console.log(err));
-  }, [user.id, setUserAnnouncements]);
+  }, [user.id]);
 
   return (
     <Profiles>

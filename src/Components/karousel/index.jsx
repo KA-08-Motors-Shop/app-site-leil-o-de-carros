@@ -5,9 +5,9 @@ const Karousel = ({ itens, title }) => {
   return (
     <Karousels>
       <h2 className="karousel-title">{title}</h2>
-      <div className="itens">
-        {itens.length > 0 ? (
-          <div>
+      <div>
+        {itens ? (
+          <div className="itens">
             {itens.map((item, index) => (
               <Card key={index} item={item} user={item.user}></Card>
             ))}

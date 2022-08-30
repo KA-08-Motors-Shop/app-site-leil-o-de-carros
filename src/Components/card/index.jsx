@@ -1,28 +1,35 @@
 import { Cards } from "./style";
-import { ExampleUser } from "../../db";
+import { useState, useEffect } from "react";
+import app from "../../Services/api";
 
-const Card = ({ item, user }) => {
+const Card = ({ item }) => {
+  console.log(item);
+
+  const getFirstLetters = (str) => {
+    const firstLetters = str
+      .split(" ")
+      .map((word) => word[0])
+      .join("")
+      .toUpperCase();
+
+    return firstLetters;
+  };
+
   return (
     <Cards>
       <figure className="image-item">
-        <img src={item.img} alt="item figure" className="item-img" />
+        <img src={item.coverImage} alt="item figure" className="item-img" />
         <figcaption>{item.shortDescription} image</figcaption>
       </figure>
-      <h4 className="item-name">{item.name}</h4>
-      <h4 className="item-description-area">{item.itemDescription}</h4>
+      <h4 className="item-name">{item.title}</h4>
+      <h4 className="item-description-area">{item.description}</h4>
       <div className="user-area">
-        <figure className="perfil-img">
-          <img src={ExampleUser.img} alt="user img" />
-          <figcaption>Perfil Image</figcaption>
-        </figure>
-        <h4>{ExampleUser.name}</h4>
+        <div className="inicials" alt="user perfil">
+          <p>{getFirstLetters(item.userName)}</p>
+        </div>
+        <h4>{item.userName}</h4>
       </div>
       <div className="bottom-card">
-        <div className="tags">
-          {item.tags.map((tag, index) => (
-            <div className="tag" key={index}>{tag}</div>
-          ))}
-        </div>
         <h4 className="price">R${item.price}</h4>
       </div>
     </Cards>
