@@ -10,6 +10,7 @@ export const Footers = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 50px;
+  margin-top: 50px;
 
   button{
     height: 50px;

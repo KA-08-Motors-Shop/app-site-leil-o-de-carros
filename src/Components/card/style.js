@@ -5,11 +5,11 @@ export const Cards = styled.div`
   min-width: 312px;
   margin-right: 48px;
   margin-left: 48px;
-  margin-bottom: 200px;
 
   .image-item {
     margin-bottom: 16px;
     background-color: var(--grey7);
+    cursor: pointer;
   }
 
   .image-item > img {
@@ -23,6 +23,7 @@ export const Cards = styled.div`
     font-weight: 600;
     font-family: "Lexend", sans-serif;
     margin-bottom: 16px;
+    cursor: pointer;
   }
 
   .item-description-area {
@@ -39,13 +40,12 @@ export const Cards = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    cursor: pointer;
   }
 
   .perfil-img {
     margin-right: 8px;
   }
-
-  
 
   .bottom-card {
     display: flex;
@@ -68,5 +68,17 @@ export const Cards = styled.div`
     justify-content: center;
     align-items: center;
     margin-right: 12px;
+  }
+
+  .initials {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    color: var(--grey10);
+    background-color: var(--brand1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
   }
 `;

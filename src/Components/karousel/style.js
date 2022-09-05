@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const Karousels = styled.div`
   display: flex;
   flex-direction: column;
-  min-heigth: 420px;
-  overflow: hidden;
-  margin-bottom: 40px;
+  height: 420px;
+  margin-bottom: 100px;
 
   .karousel-title {
     font-size: 24px;
@@ -16,6 +15,22 @@ export const Karousels = styled.div`
 
   .itens {
     display: flex;
+    width: calc(100vw - 20px);
+    overflow-x: scroll;
+  }
+
+  .itens::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .itens::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 50px;
+  }
+
+  .itens::-webkit-scrollbar-thumb {
+    background-color: var(--brand2);
+    border-radius: 50px;
   }
 
   .perfil-img {

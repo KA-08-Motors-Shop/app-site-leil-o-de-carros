@@ -65,6 +65,7 @@ export const Desktop = styled.header`
     justify-content: center;
     align-items: center;
     border-left: 2px solid var(--grey6);
+    cursor: pointer;
   }
 
   .perfil-img {

@@ -24,7 +24,7 @@ const UserInfo = ({ id }) => {
   return (
     <UserInfoStyled>
       <div className="inicials" alt="user perfil">
-        <p>{getFirstLetters(user.name)}</p>
+        <p>c</p>
       </div>
       <div className="user-name">
         <h3>{user.name}</h3>
