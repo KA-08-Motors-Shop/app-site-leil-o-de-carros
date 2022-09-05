@@ -11,6 +11,8 @@ const Profile = () => {
   const { user, userAnnouncements, setUserAnnouncements } =
     useContext(UserContext);
 
+  
+
   const announcementsProcessor = (users) => {
     var list = [];
     users.announcements.forEach((announcement) => {

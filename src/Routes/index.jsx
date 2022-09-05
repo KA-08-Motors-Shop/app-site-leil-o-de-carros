@@ -4,6 +4,7 @@ import HomePage from "../Pages/Home";
 import Profile from "../Pages/Profile";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import ItemPage from "../Pages/ItemPage";
 
 const Routes = () => {
   const location = useLocation();
@@ -21,6 +22,9 @@ const Routes = () => {
       </Route>
       <Route path="/profile">
         <Profile />
+      </Route>
+      <Route path="/announcements/:itemId">
+        <ItemPage />
       </Route>
     </Switch>
   );

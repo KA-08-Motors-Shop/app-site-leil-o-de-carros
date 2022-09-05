@@ -19,6 +19,20 @@ export const Karousels = styled.div`
     overflow-x: scroll;
   }
 
+  .itens::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .itens::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 50px;
+  }
+
+  .itens::-webkit-scrollbar-thumb {
+    background-color: var(--brand2);
+    border-radius: 50px;
+  }
+
   .perfil-img {
     display: block;
     width: 32px;
