@@ -16,14 +16,17 @@ export const HomePageStyle = styled.div`
     align-items: center;
     text-align: center;
     margin-bottom: 260px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .entry-text > h1 {
-    width: 740px;
+    width: 100%;
     font-weight: 700;
     font-family: "Lexend", sans-serif;
     font-size: 44px;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
   .entry-text > h4 {
     width: 388px;
@@ -34,9 +37,8 @@ export const HomePageStyle = styled.div`
   }
 
   .buttons {
-    width: 580px;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
   }
 
   .buttons > Button {
@@ -48,5 +50,31 @@ export const HomePageStyle = styled.div`
     font-size: 16px;
     color: var(--grey10);
     background-color: var(--brand2);
+  }
+
+  figcaption {
+    display: none;
+  }
+
+  @media (max-width: 800px) {
+    background: linear-gradient(to bottom, var(--brand1) 600px, white 0%);
+
+    .entry-text {
+      margin-bottom: 360px;
+    }
+
+    .entry-text > h4 {
+      width: 100%;
+    }
+
+    .entry-text > .buttons {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 15px;
+    }
   }
 `;

@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../Providers/user";
 import { FaBars } from "react-icons/fa";
+import { GrClose } from "react-icons/gr";
 
 import { Desktop, Mobile } from "./style";
 
@@ -100,32 +101,54 @@ const Header = () => {
             size={"25px"}
             onClick={handleMobileModal}
           />
-          <div className="login-sub-menu">
-            <Link to="">Carros</Link>
-            <Link to="">Motos</Link>
-            <Link to="">Leilão</Link>
-            <Link to="/login">Fazer Login</Link>
-            <Link to="/cadastro">Cadastrar</Link>
+          <div
+            className={mobileModal ? "login-sub-menu" : "login-sub-menu-closed"}
+          >
+            <Link className="link-menu" to="">
+              Carros
+            </Link>
+            <Link className="link-menu" to="">
+              Motos
+            </Link>
+            <Link className="link-menu" to="">
+              Leilão
+            </Link>
+            <Link className="link-menu" to="/login">
+              Fazer Login
+            </Link>
+            <Link className="link-menu" to="/cadastro">
+              Cadastrar
+            </Link>
           </div>
         </div>
       ) : (
-        <div className="user-sub-menu" onClick={handleModal}>
-          <div>
-            <div>
-              <div alt="user perfil">{getFirstLetters(user.name)}</div>
-              <div>{user.name}</div>
-            </div>
-            {mobileModal && (
-              <div className="mobile-modal">
-                <Link to="/profile">Perfil</Link>
-                <Link to="/">Carros</Link>
-                <Link to="/">Motos</Link>
-                <Link to="/">Leilão</Link>
-                <div onClick={handleLogOut}>
-                  <h4>Deslogar</h4>
-                </div>
+        <div className="menu-area">
+          <FaBars
+            className={mobileModal ? "hidden" : "hamburger"}
+            size={"25px"}
+            onClick={handleMobileModal}
+          />
+
+          <GrClose
+            className={mobileModal ? "hamburger" : "hidden"}
+            size={"25px"}
+            onClick={handleMobileModal}
+          />
+          <div className={mobileModal ? "user-sub-menu" : "hidden"}>
+            <div className="mobile-modal">
+              <Link to="/profile">Perfil</Link>
+              <Link to="/">Carros</Link>
+              <Link to="/">Motos</Link>
+              <Link to="/">Leilão</Link>
+
+              <div className="user-area">
+                <div alt="user perfil">{getFirstLetters(user.name)}</div>
+                <div>{user.name}</div>
               </div>
-            )}
+              <div onClick={handleLogOut}>
+                <h4>Deslogar</h4>
+              </div>
+            </div>
           </div>
         </div>
       )}
