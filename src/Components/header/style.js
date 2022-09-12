@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
-export const Mobile = styled.header``;
+export const Mobile = styled.header`
+  background-color: var(--grey10);
+  display: flex;
+  padding: 12px;
+  justify-content: space-between;
+
+  .hidden {
+    display: none;
+  }
+`;
 export const Desktop = styled.header`
   width: 100%;
   height: 80px;
