@@ -50,8 +50,3 @@ The Projecty are still on working, the next updates are:
     
   </tr>
 </table>
-
-
-
-
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
