@@ -8,7 +8,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="src/Utils/LogoSVG.jsx" alt="Project Logo">
+<img src="src/Utils/imgs/logo.png" alt="Project Logo">
 
 > We are making a site app where you can make auctions and make bids on automobiles. It's a full-stack project working with React and Express together for our goals.
 
@@ -22,7 +22,7 @@ The Projecty are still on working, the next updates are:
 - [x] Announcement Page
 - [x] Login
 - [ ] Modal for announcement/ auction register
-- [ ] Register
+- [ ] User Register
 
 
 ## 🤝 DEVs
